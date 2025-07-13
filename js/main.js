@@ -1,17 +1,17 @@
-document.getElementById('inscripcion-form').addEventListener('submit', function(e) {
-    // Mensaje de confirmación local (el correo lo envía Formspree/Netlify)
-    alert('¡Inscripción enviada! Recibirás un correo de confirmación.');
-    // Aquí podrías añadir integración con Google Calendar (ver abajo)
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const preloader = document.getElementById("preloader");
+  const hero = document.querySelector(".hero-section");
 
-// Ejemplo básico de generación de enlace a Google Calendar
-function addToGoogleCalendar(nombre, fecha) {
-    const event = {
-        text: 'Tecnificación Cancela 74',
-        dates: fecha.replace(/-/g, '') + 'T100000Z/' + fecha.replace(/-/g, '') + 'T130000Z',
-        details: 'Hockey sobre patines - Tecnificación Cancela 74',
-        location: 'Pista Cancela 74',
-    };
-    const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.text)}&dates=${event.dates}&details=${encodeURIComponent(event.details)}&location=${encodeURIComponent(event.location)}`;
-    window.open(url, '_blank');
-}
+  setTimeout(() => {
+    preloader.style.opacity = "0";
+
+    setTimeout(() => {
+      preloader.remove();
+      hero.style.display = "flex";
+
+      // Activa animaciones ya definidas por CSS
+      document.querySelector(".hero-text").classList.add("fade-in-text");
+      document.querySelector(".hero-image").classList.add("fade-in-image");
+    }, 1000);
+  }, 2000); // 2s de preloader antes de mostrar hero
+});

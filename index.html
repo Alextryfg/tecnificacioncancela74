@@ -1,53 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnificación Cancela 74</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pablo Cancela - Tecnificaciones</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
+  <!-- HERO FULLSCREEN -->
+<section class="hero-section">
+  <div class="hero-text fade-in-text">
+    <h1><span class="text-accent">PABLO</span> CANCELA</h1>
+    <p id="ocupacion">TECNIFICACIÓN</p>
+  </div>
+  <div class="hero-image fade-in-image">
+    <img src="assets/cancela.png" alt="Pablo Cancela" />
+  </div>
+</section>
+
+
+  <!-- FORMULARIO -->
+  <section class="form-section py-5">
     <div class="container">
-        <header>
-            <h1>Tecnificación Cancela 74</h1>
-            <img src="assets/header.jpg" alt="Imagen destacada">
-            <p class="description">En esta tecnificación trabajaremos…</p>
-        </header>
-        <form name="inscripcion" id="inscripcion-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" autocomplete="off">
-            <input type="hidden" name="form-name" value="inscripcion">
-            <p style="display:none">
-                <label>¿Eres un robot? <input name="bot-field"></label>
-            </p>
-            <input type="text" name="nombre" placeholder="Nombre" required pattern=".{2,50}" title="Introduce tu nombre (2-50 caracteres)">
-            <input type="email" name="correo" placeholder="Correo electrónico" required>
-            <input type="tel" name="telefono" placeholder="Teléfono" required pattern="[0-9+\-\s]{7,15}" title="Introduce un número válido">
-            <label for="fecha">Selecciona el día para asistir:</label>
-            <select name="fecha" id="fecha" required>
-                <option value="">-- Selecciona un día --</option>
-                <option value="2025-12-07">Domingo, 7 de diciembre 2025</option>
-                <option value="2025-12-14">Domingo, 14 de diciembre 2025</option>
-                <option value="2025-12-21">Domingo, 21 de diciembre 2025</option>
-                <option value="2025-12-28">Domingo, 28 de diciembre 2025</option>
-                <option value="2026-01-04">Domingo, 4 de enero 2026</option>
-                <option value="2026-01-11">Domingo, 11 de enero 2026</option>
-                <option value="2026-01-18">Domingo, 18 de enero 2026</option>
-                <option value="2026-01-25">Domingo, 25 de enero 2026</option>
-                <option value="2026-02-01">Domingo, 1 de febrero 2026</option>
-                <option value="2026-02-08">Domingo, 8 de febrero 2026</option>
-                <option value="2026-02-15">Domingo, 15 de febrero 2026</option>
-                <option value="2026-02-22">Domingo, 22 de febrero 2026</option>
-            </select>
-            <button type="submit">Apuntarme</button>
-        </form>
-        <div class="info">
-            <p>Precio por día: 54€</p>
-            <p>Plazas disponibles: 20</p>
-            <p>El pago se realizará en metálico el día de la tecnificación.</p>
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <header class="text-center text-white mb-4">
+            <h2>Tecnificación Cancela 74</h2>
+            <p class="lead">Entrena con Pablo Cancela. Técnica individual y táctica ofensiva.</p>
+          </header>
+
+         <form name="inscripcion" id="inscripcion-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" autocomplete="off" class="bg-dark-subtle p-4 rounded-4 shadow-lg">
+  <input type="hidden" name="form-name" value="inscripcion" />
+  
+  <div style="display:none">
+    <label>¿Eres un robot? <input name="bot-field" /></label>
+  </div>
+
+  <div class="mb-3">
+    <input type="text" name="nombre" placeholder="Nombre completo" class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <input type="email" name="correo" placeholder="Correo electrónico" class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <input type="tel" name="telefono" placeholder="Teléfono (9 dígitos)" class="form-control" required pattern="[0-9]{9}" title="Introduce un número de teléfono con 9 dígitos (sin espacios)" />
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label text-black">Selecciona un día:</label>
+    <select name="fecha" class="form-select" required>
+      <option value="">-- Selecciona --</option>
+      <option value="2025-12-07">Domingo, 7 de diciembre 2025</option>
+      <option value="2025-12-14">Domingo, 14 de diciembre 2025</option>
+      <option value="2025-12-21">Domingo, 21 de diciembre 2025</option>
+      <option value="2025-12-28">Domingo, 28 de diciembre 2025</option>
+      <option value="2026-01-04">Domingo, 4 de enero 2026</option>
+      <option value="2026-01-11">Domingo, 11 de enero 2026</option>
+      <option value="2026-01-18">Domingo, 18 de enero 2026</option>
+      <option value="2026-01-25">Domingo, 25 de enero 2026</option>
+      <option value="2026-02-01">Domingo, 1 de febrero 2026</option>
+      <option value="2026-02-08">Domingo, 8 de febrero 2026</option>
+      <option value="2026-02-15">Domingo, 15 de febrero 2026</option>
+      <option value="2026-02-22">Domingo, 22 de febrero 2026</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-accent w-100 fw-bold mt-3">Apuntarme</button>
+</form>
+
+
+          <div class="text-center mt-4 text-white">
+            <p>Precio por día: <strong>54€</strong></p>
+            <p>Plazas disponibles: <strong>20</strong></p>
+            <p>Pago en metálico el día de la tecnificación.</p>
+          </div>
         </div>
-        <div id="calendar-link" style="display:none; margin-top:15px; text-align:center;">
-            <button id="add-calendar" type="button">Añadir al Google Calendar</button>
-        </div>
+      </div>
     </div>
-    <script src="js/main.js"></script>
+  </section>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
