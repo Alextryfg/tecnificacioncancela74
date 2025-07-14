@@ -1,14 +1,22 @@
 :root {
   --primary-dark: #0a192f;
   --accent: #ffc107;
-  --bg-light: #f0f4f8;
+  --bg-light: #8cc2f8;
+  --text-light: #000000;
+  --text-muted: #cccccc;
 }
+
+.text-dark {
+  color: #111 !important;
+}
+
 
 body {
   margin: 0;
   background-color: var(--primary-dark);
   font-family: 'Segoe UI', sans-serif;
   overflow-x: hidden;
+  color: var(--text-light);
 }
 
 /* === HERO SECTION === */
@@ -20,12 +28,10 @@ body {
   align-items: center;
   text-align: center;
   background-color: var(--primary-dark);
-  position: relative;
   padding: 40px 20px;
   overflow: hidden;
 }
 
-/* Título animado */
 .hero-text {
   z-index: 2;
   opacity: 0;
@@ -51,7 +57,6 @@ body {
   animation: fadeInUp 2s ease-out 1s forwards;
 }
 
-/* Imagen animada */
 .hero-image {
   margin-top: 40px;
   opacity: 0;
@@ -62,9 +67,91 @@ body {
 }
 
 .hero-image img {
-  width: auto;
   max-height: 80vh;
   object-fit: contain;
+}
+
+/* === SECTION ESTILO GENERAL === */
+.info-section {
+  padding: 60px 20px;
+}
+
+.bg-light {
+  background-color: var(--bg-light) !important;
+  color: #111;
+}
+
+.bg-secondary {
+  background-color: #1c2e4a !important;
+  color: var(--text-light);
+}
+
+/* === TIPOGRAFÍA Y CENTRADO === */
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+/* === TABLA === */
+table {
+  margin: auto;
+  width: 100%;
+  max-width: 600px;
+  font-size: 1.1rem;
+}
+
+th, td {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+}
+
+thead {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+/* === FORMULARIO === */
+.form-section {
+  background-color: #121e35;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: #000;
+  border: none;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.btn-accent:hover {
+  background-color: #e6b800;
+  transform: scale(1.03);
+}
+
+.bg-dark-subtle {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* === ANIMACIONES === */
@@ -82,37 +169,57 @@ body {
   }
 }
 
-@keyframes fadeInOut {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+@keyframes popScale {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-/* === FORM SECTION === */
-.form-section {
-  background-color: #121e35;
+/* === ÉXITO FORMULARIO === */
+.success-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(10, 25, 47, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
 }
 
-.form-control,
-.form-select {
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  padding: 12px;
+.success-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.btn-accent {
-  background-color: var(--accent);
-  color: #000;
-  border: none;
-  transition: all 0.3s ease;
+.animate-check {
+  animation: popScale 1.2s ease-out forwards;
 }
 
-.btn-accent:hover {
-  background-color: #e6b800;
-  transform: scale(1.02);
+/* === CONTACTO Y FOOTER === */
+.contact {
+  padding: 60px 20px;
 }
 
-.bg-dark-subtle {
-  background-color: rgba(255, 255, 255, 0.05);
+footer {
+  background-color: #111;
+  padding: 20px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
 /* === RESPONSIVE === */
@@ -128,5 +235,13 @@ body {
   .hero-image img {
     max-width: 90%;
     height: auto;
+  }
+
+  table {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
   }
 }
