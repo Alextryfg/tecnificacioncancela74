@@ -14,6 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const submitBtn = form.querySelector("button[type='submit']");
     submitBtn.disabled = true; // Desactiva mientras se consulta
+    var jugadores;
+    var porteros;
+
+    jugadores = 0;
+    porteros = 0;
 
 
     try {
@@ -27,8 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = await res.json();
 
-      const jugadores = data.jugadores || 0;
-      const porteros = data.porteros || 0;
+      jugadores = data.jugadores || 0;
+      porteros = data.porteros || 0;
 
       document.getElementById("num-jugadores").textContent = `${jugadores}/6`;
       document.getElementById("num-porteros").textContent = `${porteros}/2`;
