@@ -145,6 +145,13 @@ thead {
   font-size: 1.1rem;
 }
 
+.btn-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+
 .btn-accent:hover {
   background-color: #e6b800;
   transform: scale(1.03);
@@ -181,6 +188,11 @@ thead {
   100% {
     transform: scale(1);
   }
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 1.05rem;
 }
 
 /* === ÉXITO FORMULARIO === */
