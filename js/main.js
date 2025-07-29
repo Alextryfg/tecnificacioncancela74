@@ -5,6 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const turnoSelect = form.querySelector("select[name='turno']");
   const estadoTurno = document.getElementById("estado-turno");
 
+  const carousel = new bootstrap.Carousel('#carouselExample', {
+    interval: 3000, // tiempo entre imágenes
+    ride: 'carousel',
+    pause: false,   // sigue aunque el ratón esté encima
+    wrap: true      // vuelve al inicio al llegar al final
+  });
+
   async function comprobarDisponibilidad() {
     estadoTurno.innerHTML = ""; // Limpia mensajes anteriores
     const fecha = fechaSelect.value;
