@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     try {
-      const res = await fetch("https://hook.eu2.make.com/40p78szs7saqn0g1pvae57rafy11qvex", {
+      const res = await fetch("https://hook.eu2.make.com/uflwixgo7cjvcrkrvqtrxxffxdlsrmgw", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ fecha, turno }),
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = new FormData(form);
     const json = Object.fromEntries(data.entries());
 
-    fetch("https://hook.eu2.make.com/d1uvsbxvjuh3lp6vpz1f3fsj1rsyxxsw", {
+    fetch("https://hook.eu2.make.com/4skux3goyqwbyris5x17djwpj329rrhv", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(json),
